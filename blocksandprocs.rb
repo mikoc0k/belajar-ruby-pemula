@@ -29,3 +29,4 @@ count_gula = Proc.new do |gula|
 end
 
 count_gula.call(50)
+count_gula.call(22)
