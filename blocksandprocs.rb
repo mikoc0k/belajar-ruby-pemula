@@ -35,7 +35,10 @@ count_gula.call(22)
 =end
 
 # contoh selanjutnya
+
 # passing block sebagai parameter (gokils)
+
+=begin
 def profile desc_of_block, &block
     start_time = Time.now
     block.call
@@ -56,4 +59,17 @@ profile "count to a million" do
     1000000.times do
         number += 1
     end
+end
+
+=end
+
+# contoh passing block sebagai parameter (simpler example)
+def tester &block
+    puts 'before block'
+    block.call
+    puts 'after block'
+end
+
+tester do
+    puts 'ini dia blocknya'
 end
