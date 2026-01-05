@@ -1,3 +1,4 @@
+=begin
 # a = Array.new + [12345]
 # puts a.to_s
 # puts a
@@ -229,3 +230,14 @@ def passageOfTime
   end
 end
 end
+
+=end
+
+Car = Class.new do
+  def halo
+    "helo dunia"
+  end
+end
+
+lambo = Car.new
+puts lambo.halo
