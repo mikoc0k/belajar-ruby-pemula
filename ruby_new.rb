@@ -101,10 +101,40 @@ nilai = 33
 puts 'lulus ujian' if nilai >= 75 # logika identik dengan di bawah ini
 puts 'gagal ujian' unless nilai >= 75
 
-=end
 
 antrian = 0
 while antrian < 9
-    puts "nomor antrianmu : #{antrian+1}"
-    antrian += 1
+  puts "nomor antrianmu : #{antrian+1}"
+  antrian += 1
 end
+
+
+# block dan iterator
+
+def call_block
+  yield
+  yield
+end
+
+call_block { puts 'hidup kowo-jee'}
+
+def sapa_nama(nama)
+    yield(nama)
+  end
+  
+  
+  sapa_nama('jo-kowai') { |name| puts "halo, namaku #{name}" } # yield dengan parameter
+  sapa_nama('wiwowo') { |name| puts "ini presiden kita, #{name} adalah pecinta sawit"}
+  # pakai method yang sama tetapi blocknya bisa beda-beda
+  # sangat efektif daripada fixed method,harus ganti logika di dalam methodnya
+  
+=end
+
+# sintatik sugar %w
+# bikin string jadi array
+
+array_buah_lokal = %w(mangga pisang jeruk apel mamalemon)
+print array_buah_lokal
+# kita repeat pake method each
+
+array_buah_lokal.each { |element| puts "\n buah lokal - #{element} " }
