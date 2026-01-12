@@ -138,3 +138,20 @@ print array_buah_lokal
 # kita repeat pake method each
 
 array_buah_lokal.each { |element| puts "\n buah lokal - #{element} " }
+
+=begin
+# contoh lain
+sambal = ['matah', 'terasi', 'bawang','dabu-dabu','rica-rica','kecombrang',]
+puts sambal
+sambal.each.with_index(1) { | items,i | puts " no.#{i} - sambal #{items} " } #variasi lain dari each
+# bisa dikombinasi dg method lain sebelum with_index
+# contoh : sambal.map.with_index(1)
+# each_with_index untuk menampilkan index otomatis dari 0
+puts " \n"
+sambal.each_with_index { | items,i | puts " no.#{i} - sambal #{items} " }
+
+=end
+
+# simple looping dengan times
+5.times { |i| puts "perulangan ke-#{i+1}" }
+
