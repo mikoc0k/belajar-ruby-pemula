@@ -130,6 +130,8 @@ def sapa_nama(nama)
   
 =end
 
+=begin
+
 # sintatik sugar %w
 # bikin string jadi array
 
@@ -139,7 +141,6 @@ print array_buah_lokal
 
 array_buah_lokal.each { |element| puts "\n buah lokal - #{element} " }
 
-=begin
 # contoh lain
 sambal = ['matah', 'terasi', 'bawang','dabu-dabu','rica-rica','kecombrang',]
 puts sambal
@@ -150,8 +151,23 @@ sambal.each.with_index(1) { | items,i | puts " no.#{i} - sambal #{items} " } #va
 puts " \n"
 sambal.each_with_index { | items,i | puts " no.#{i} - sambal #{items} " }
 
-=end
 
 # simple looping dengan times
 5.times { |i| puts "perulangan ke-#{i+1}" }
+5.times { puts 'helo' }
+3.upto(6) { |number| puts number }
+puts 'halo'
+puts 'haaloo'
+=end
 
+=begin
+
+# mencetak berformat
+printf "Number: %5.2f , String: %s \n" , 1.23, "helo"
+number = 12.4544212
+printf "angka: %3.3f \n", number
+
+=end
+
+line = gets # "gets" adalah method menerima inputan dari keyboard
+print line
