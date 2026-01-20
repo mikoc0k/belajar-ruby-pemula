@@ -61,18 +61,18 @@ puts prabowo_song
 # prabowo_song.to_s
 
 =begin
+=end
 class Songong
     def initialize(name, artist, duration)
         @name = name
         @artist = artist
         @duration = duration
     end
-    def to_s
-        "song : #{@name}--#{@artist}: #{@duration}"
+    def to_ss
+        "song : #{@name} [#{@artist}]: #{@duration} detik"
     end
 end
 
 joko_songong = Songong.new('jowi', 'jo woki', 12000)
 # p joko_songong
-puts joko_songong.to_s
-=end
+puts joko_songong.to_ss
