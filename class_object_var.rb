@@ -63,7 +63,6 @@ puts prabowo_song
 =end
 
 =begin
-=end
 class Songong
     def initialize(name, artist, duration)
         @name = name
@@ -78,4 +77,51 @@ end
 joko_songong = Songong.new('jowi', 'jo woki', 12000)
 # p joko_songong
 puts joko_songong.to_s
+
+# instance var hanya bisa diakses dari dalam lewat method to_s
 =end
+
+=begin
+
+# instance var bisa diakses dari luar dg cara manual
+class Sing_Song
+    def initialize(name, artist, duration)
+        @name = name
+        @artist = artist
+        @duration = duration
+    end
+    def name
+        @name
+    end
+    def artist
+        @artist
+    end
+    def duration
+        @duration
+    end
+end
+
+bitch_jokowi = Sing_Song.new('kowe ji', 'jocowee', 4665)
+puts bitch_jokowi
+p bitch_jokowi
+puts bitch_jokowi.name
+puts bitch_jokowi.artist
+puts bitch_jokowi.duration
+
+=end
+
+# instance dapat diakses dari luar dengan shorthand attr_reader
+=begin
+=end
+
+class SingSing
+    def initialize(name, artist, duration)
+        @name = name
+        @artist = artist
+        @duration = duration
+    end
+    attr_reader :name, :artist, :duration
+end
+
+wowo_singing = SingSing.new('i love sawit','prawowo',54000)
+puts wowo_singing.name + ' ' + wowo_singing.duration.to_s + ' menit' +' from : '+ wowo_singing.artist
