@@ -41,6 +41,7 @@ p lagu
 # membuat class dan method
 
 =end
+=begin
 class Song
     def initialize(name, artist, duration)
         @name = name # @ cara menandai variabel sbg instance
@@ -59,6 +60,7 @@ prabowo_song = Song.new('rawowo','prwbowo', 16891)
 # p prabowo_song
 puts prabowo_song
 # prabowo_song.to_s
+=end
 
 =begin
 =end
@@ -68,11 +70,12 @@ class Songong
         @artist = artist
         @duration = duration
     end
-    def to_ss
-        "song : #{@name} [#{@artist}]: #{@duration} detik"
+    def to_s
+        "song : #{@name}--#{@artist}: #{@duration}"
     end
 end
 
 joko_songong = Songong.new('jowi', 'jo woki', 12000)
 # p joko_songong
-puts joko_songong.to_ss
+puts joko_songong.to_s
+=end
