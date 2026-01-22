@@ -125,3 +125,5 @@ end
 
 wowo_singing = SingSing.new('i love sawit','prawowo',54000)
 puts wowo_singing.name + ' ' + wowo_singing.duration.to_s + ' menit' +' from : '+ wowo_singing.artist
+
+
