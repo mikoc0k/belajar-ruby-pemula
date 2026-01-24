@@ -112,6 +112,7 @@ puts bitch_jokowi.duration
 
 # instance dapat diakses dari luar dengan shorthand attr_reader
 =begin
+=end
 
 class SingSing
     def initialize(name, artist, duration)
@@ -125,7 +126,6 @@ end
 wowo_singing = SingSing.new('i love sawit','prawowo',54000)
 puts wowo_singing.name + ' ' + wowo_singing.duration.to_s + ' menit' +' from : '+ wowo_singing.artist
 
-=end
 
 =begin
 =end
@@ -136,5 +136,9 @@ class Karaoke < SingSing
         super(name, artist, duration)
         @lyric = lyric
     end
+    attr_reader :lyric
 end
 
+prawowo_karaoke = Karaoke.new('pra ewe', 'prabowo', '44600','nguwawor pol bingit ya')
+puts "#{prawowo_karaoke.artist} nyanyi lagu berjudul : #{prawowo_karaoke.name} selama #{prawowo_karaoke.duration} menit"
+puts "liriknya : #{prawowo_karaoke.lyric}"
