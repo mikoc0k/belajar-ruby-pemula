@@ -167,6 +167,7 @@ puts asing.duration
 =end
 # cara diatas bisa ditulis ulang lebih singkat dengan attr_writer
 
+=begin
 # virtual atribut
 class Sing
     def initialize(name, duration, artist)
@@ -187,3 +188,26 @@ asing_sing = Sing.new('tanam-tanam sawit', 600, 'praowo') # duration masih = 600
 asing_sing.durationInMinutes=1 # durasi diset ke = 1
 puts asing_sing.duration # 1 menit tadi dikembalikan ke duration menjadi 60 detik
 puts asing_sing.durationInMinutes # durationInMinutes merubah 60s jadi 1 menit
+
+=end
+
+=begin
+=end
+
+class Media
+    def initialize(title)
+        @title = title
+    end
+    attr_reader :title
+    def to_uppercase
+        @title.upcase
+    end
+    def title=(string)
+        @title = string.downcase
+    end
+end
+
+m = Media.new('belajar ruby')
+m.title = 'BELAJAR RUBY'
+puts m.title
+puts m.to_uppercase
