@@ -112,6 +112,7 @@ puts bitch_jokowi.duration
 
 # instance dapat diakses dari luar dengan shorthand attr_reader
 =begin
+=end
 
 class SingSing
     def initialize(name, artist, duration)
@@ -120,12 +121,14 @@ class SingSing
         @duration = duration
     end
     attr_reader :name, :artist, :duration
+    def to_s
+        "song : #{@name}--#{@artist}: #{@duration}"
+    end
 end
 
 wowo_singing = SingSing.new('i love sawit','prawowo',54000)
 puts wowo_singing.name + ' ' + wowo_singing.duration.to_s + ' menit' +' from : '+ wowo_singing.artist
 
-=end
 
 =begin
 # inheritance
