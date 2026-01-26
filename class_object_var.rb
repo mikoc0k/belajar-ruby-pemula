@@ -112,7 +112,6 @@ puts bitch_jokowi.duration
 
 # instance dapat diakses dari luar dengan shorthand attr_reader
 =begin
-=end
 
 class SingSing
     def initialize(name, artist, duration)
@@ -129,6 +128,7 @@ end
 wowo_singing = SingSing.new('i love sawit','prawowo',54000)
 puts wowo_singing.name + ' ' + wowo_singing.duration.to_s + ' menit' +' from : '+ wowo_singing.artist
 
+=end
 
 =begin
 # inheritance
@@ -169,11 +169,12 @@ puts asing.duration
 
 # virtual atribut
 class Sing
-    def initialize(duration)
+    def initialize(name, duration, artist)
+        @name = name
         @duration = duration
+        @artist = artist
     end
-    attr_reader :duration
-    attr_writer :duration
+    attr_reader :name, :duration, :artist
     def durationInMinutes
         @duration / 60.0
     end
@@ -182,5 +183,7 @@ class Sing
     end
 end
 
-asing_sing = Sing.new(544)
-puts asing_sing.duration
+asing_sing = Sing.new('tanam-tanam sawit', 600, 'praowo') # duration masih = 600
+asing_sing.durationInMinutes=1 # durasi diset ke = 1
+puts asing_sing.duration # 1 menit tadi dikembalikan ke duration menjadi 60 detik
+puts asing_sing.durationInMinutes # durationInMinutes merubah 60s jadi 1 menit
