@@ -168,7 +168,9 @@ puts asing.duration
 # cara diatas bisa ditulis ulang lebih singkat dengan attr_writer
 
 =begin
-# virtual atribut
+# virtual atribut 
+# atribut yang dihitung/diproses tapi tidak disimpan
+# contoh : 
 class Sing
     def initialize(name, duration, artist)
         @name = name
