@@ -250,3 +250,56 @@ adalah bentuk panjang dari
 attr_writer :nama
 
 =end
+
+=begin
+# Class Var dan Class method
+
+# class var
+# diawali doble @, contoh -> @@username
+# class var berbagi dengan semua objek di dalam class
+# jika instance var @var dimiliki masing2 objek,
+# class var @@var saling berbagi antar objek
+class Nyanyi
+    @@plays=0
+    def initialize(title, artist, duration)
+        @title = title
+        @artist = artist
+        @duration = duration
+        @plays = 0
+    end
+    def play
+        @plays +=1
+        @@plays +=1
+        "this song - #@plays | total played : #@@plays"
+    end
+end
+
+s1 = Nyanyi.new('maafkan joko wee', 'gibran', 1449)
+s2 = Nyanyi.new('hidup koko wee', 'mas ow o',9822)
+
+s1.play
+puts s1.play
+puts s2.play
+
+=end
+
+# contoh lain
+
+class Mobil
+    @@total = 0
+    def initialize(warna)
+        @warna = warna
+        @@total += 1
+    end
+    attr_accessor :warna
+    # Class method untuk mengakses variabel kelas @@total
+    def self.total
+        @@total
+    end
+end
+
+sedan = Mobil.new('hytam')
+pickap = Mobil.new('kuning')
+pickap.warna = 'ungu'
+puts pickap.warna
+puts Mobil.total
