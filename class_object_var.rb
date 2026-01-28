@@ -164,8 +164,24 @@ asing = Song.new(69)
 puts asing.duration
 asing.duration=100000
 puts asing.duration
-=end
 # cara diatas bisa ditulis ulang lebih singkat dengan attr_writer
+=end
+
+# menggunakan attr_writer
+=begin
+class Song_asong
+    def initialize(dosa)
+        @dosa = dosa
+    end
+    attr_reader :dosa
+    attr_writer :dosa
+end
+awowo = Song_asong.new(4554)
+puts awowo.dosa
+awowo.dosa=20000
+puts awowo.dosa
+
+=end
 
 =begin
 # virtual atribut 
@@ -192,9 +208,8 @@ puts asing_sing.duration # 1 menit tadi dikembalikan ke duration menjadi 60 deti
 puts asing_sing.durationInMinutes # durationInMinutes merubah 60s jadi 1 menit
 
 =end
-
+# contoh lain virtual attributs
 =begin
-=end
 
 class Media
     def initialize(title)
@@ -213,3 +228,25 @@ m = Media.new('belajar ruby')
 m.title = 'BELAJAR RUBY'
 puts m.title
 puts m.to_uppercase
+=end
+
+=begin
+def nama
+    return @nama
+end
+
+adalah bentuk panjang dari 
+
+attr_reader :nama
+
+-----------------------
+
+def nama=(newnama)
+    @nama = newnama
+end
+
+adalah bentuk panjang dari
+
+attr_writer :nama
+
+=end
