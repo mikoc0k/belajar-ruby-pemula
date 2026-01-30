@@ -313,7 +313,7 @@ class Buku
     @@total_buku = 0
     def initialize(judul,harga)
         @judul = judul
-        @harga = harga
+        self.harga = harga
         @@total_buku += 1 # Increment class variable when a new book is created
     end
 
@@ -327,12 +327,14 @@ class Buku
     end
     def harga=(nilai_baru) # Setter for price with validation
         if nilai_baru < 0
-            puts 'harga tidak boleh negatif' # Fixed missing apostrophe
+            # puts 'harga tidak boleh negatif' # Fixed missing apostrophe
+            # Optionally, you could raise an error or keep the old value:
+            raise ArgumentError, 'Harga tidak boleh negatif'
         else
             @harga = nilai_baru
         end # Added missing 'end' for the if statement
     end
-    def self.total_buku
+    def self.total_buku #class Method. gunanya untuk memanggil class var
         @@total_buku
     end
 
@@ -340,9 +342,12 @@ end
 
 buku1 = Buku.new('jokowi sang pahlawan', 7500)
 buku2 = Buku.new('wowo sang raja sawit', 11000)
+buku3 = Buku.new('raja jawa', 20000)
 
 puts buku1.judul
 puts buku1.harga
 puts buku2.judul
 puts buku2.harga
 puts 'jumlah buku adalah : ' + Buku.total_buku.to_s
+puts buku3.harga
+puts Buku.total_buku.to_s
