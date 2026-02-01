@@ -373,3 +373,36 @@ puts "id_2 : #{id_2.object_id}"
 
 =end
 
+# class method sebagai pseudo constructor
+
+# instead of this
+=begin
+
+class Shape
+    def initialize(num_sides, perimeter)
+        @num_sides = num_sides # Store num_sides as an instance variable
+        @perimeter = perimeter # Store perimeter as an instance variable
+    end
+
+    # attr_reader creates getter methods for @num_sides and @perimeter
+    attr_reader :num_sides, :perimeter
+end
+
+# Example Usage:
+# my_square = Shape.new(4, 20)
+# puts "Number of sides: #{my_square.num_sides}" # Output: Number of sides: 4
+# puts "Perimeter: #{my_square.perimeter}"     # Output: Perimeter: 20
+
+# do this
+class Shapee
+    def self.triangle(sides)
+        Shape.new(3, sides*3)
+    end
+    def self.square(sides)
+        Shape.new(4, sides*4)
+    end
+end
+
+=end
+
+# Akses Kontrol
