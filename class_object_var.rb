@@ -307,7 +307,6 @@ puts Mobil.total
 
 # contoh lain
 =begin
-=end
 
 class Buku
     @@total_buku = 0
@@ -316,9 +315,9 @@ class Buku
         self.harga = harga
         @@total_buku += 1 # Increment class variable when a new book is created
     end
-
+    
     attr_reader :harga # Add a getter for price
-
+    
     def judul
         @judul.upcase
     end
@@ -337,7 +336,7 @@ class Buku
     def self.total_buku #class Method. gunanya untuk memanggil class var
         @@total_buku
     end
-
+    
 end
 
 buku1 = Buku.new('jokowi sang pahlawan', 7500)
@@ -351,3 +350,26 @@ puts buku2.harga
 puts 'jumlah buku adalah : ' + Buku.total_buku.to_s
 puts buku3.harga
 puts Buku.total_buku.to_s
+=end
+
+# Singleton : 
+# let's try this code with singleton design
+
+=begin
+class Logger # Perbaikan: Nama kelas konsisten
+    private_class_method :new
+    @@logger = nil
+    def Logger.create
+        @@logger = new unless @@logger
+        @@logger # Perbaikan: Kembalikan class variable @@logger
+    end
+end
+
+id_1 = Logger.create
+id_2 = Logger.create
+
+puts "id_1 : #{id_1.object_id}"
+puts "id_2 : #{id_2.object_id}"
+
+=end
+
