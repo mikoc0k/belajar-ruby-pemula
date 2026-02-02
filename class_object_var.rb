@@ -406,3 +406,84 @@ end
 =end
 
 # Akses Kontrol
+# kita dapat memberikan level akses berbeda pada metod tertentu di dalam kelas
+# ada 3 level akses : public, protected, private
+
+# public : default semua metod jika tidak diatur. bisa dipanggil siapa saja, dari luar/dalam class
+# protected : dapat dipanggil dari instance yang sama kelas,atau kelas turunannya
+# private : dapat dipanggil dari dalam instance nya sendiri.
+
+=begin
+
+# contoh
+class AkunBank
+    def initialize(pin, saldo)
+        @pin = pin
+        @saldo = saldo
+    end
+    
+    def tampilkan_saldo
+        puts "saldo ente adalah : Rp.#{@saldo}"
+    end
+    protected
+    def nilai_saldo
+        @saldo
+    end
+end
+
+
+akun_saya = AkunBank.new(123321, 1_000_000) # Menggunakan underscore untuk readability
+akun_saya.tampilkan_saldo # Cukup panggil method ini, tidak perlu puts lagi karena sudah ada puts di dalamnya
+puts "Saldo yang diambil dari method nilai_saldo: Rp.#{akun_saya.nilai_saldo}" # Sekarang ini akan berhasil
+akun_saya = AkunBank.new(123321, 1_000_000)
+akun_saya.tampilkan_saldo
+puts "Saldo yang diambil dari method nilai_saldo: Rp.#{akun_saya.nilai_saldo}" #error karena nilai_saldo = protected
+
+=end
+
+# alternatif penulisan controls
+=begin
+
+class AkunBank
+    def initialize(pin, saldo)
+        @pin = pin
+        @saldo = saldo
+    end
+    
+    def tampilkan_saldo
+        puts "saldo ente adalah : Rp.#{@saldo}"
+    end
+    
+    def nilai_saldo
+        @saldo
+    end
+    
+    public :tampilkan_saldo
+    protected :nilai_saldo
+end
+
+akun_saya = AkunBank.new(123321, 1_000_000) # Menggunakan underscore untuk readability
+akun_saya.tampilkan_saldo # Cukup panggil method ini, tidak perlu puts lagi karena sudah ada puts di dalamnya
+puts "Saldo yang diambil dari method nilai_saldo: Rp.#{akun_saya.nilai_saldo}" # Sekarang ini akan berhasil
+akun_saya = AkunBank.new(123321, 1_000_000)
+akun_saya.tampilkan_saldo
+puts "Saldo yang diambil dari method nilai_saldo: Rp.#{akun_saya.nilai_saldo}" #error karena nilai_saldo = protected
+=end
+
+# variables
+person = "tim"
+puts person.object_id
+puts person.class # Menggunakan .class untuk mendapatkan kelas objek
+puts person
+
+person1 = "epstein subianto"
+person2 = person1
+person1[0] = "X"
+puts person1
+puts person2
+
+# kita coba method freeze
+person1.freeze #freeze
+person1[7] = '------'
+puts person1
+puts person2
